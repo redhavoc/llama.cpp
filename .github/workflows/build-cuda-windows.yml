@@ -1,7 +1,7 @@
 name: CI (CUDA, windows)
 
 on:
-  workflow_dispatch: # allows manual triggering from the Actions tab
+  workflow_dispatch:
   push:
     branches:
       - master
@@ -58,9 +58,9 @@ jobs:
             -DGGML_AVX512=ON ^
             -DGGML_AVX512_VBMI=ON ^
             -DGGML_AVX512_VNNI=ON ^
-            -DGGML_AVX512_BF16=ON ^
+            -DGGML_AVX512_BF16=OFF ^
             -DGGML_CUDA=ON ^
-            -DGGML_CUDA_FA_ALL_QUANTS=ON ^
+            -DGGML_CUDA_FA_QUANTS=all ^
             -DCMAKE_CUDA_ARCHITECTURES="89" ^
             -DLLAMA_BUILD_SERVER=ON ^
             -DLLAMA_BUILD_COMMON=ON ^
